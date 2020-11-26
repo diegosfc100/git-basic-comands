@@ -1,6 +1,6 @@
 # GIT E GITHUB
 
-Guia Prático.
+Guia Prático para iniciantes -como eu.
 
 # SCENES
 
@@ -9,7 +9,7 @@ Guia Prático.
  - [x] Você começa uma nova funcionalidade no seu projeto, sem estragar o q já foi feito.
  - [x] Você adiciona as novas funcionalidades ao seu projeto em produção.
  - [x] Você quer deletar a branch da nova funcionalidade, depois de aplicar em seu projeto. 
- - [] Colocar o projeto na nuvem.
+ - [x] Colocar o projeto na nuvem.
    
  - `git init` // inicia a linha do tempo.
  - `git add` // adiciona ou atualiza mudanças p irem para a linha do tempo
