@@ -1,25 +1,72 @@
-# GIT E GITHUB
+# GIT Commands to Live By.
 
-Guia Prático para iniciantes -como eu.
 
-# SCENES
+$ git init 
+> Iniciliza o repositório na sua máquina.
 
- - [x] Você deseja criar pontos na história da produção do seu projeto.
- - [x] Você deseja verificar mudanças feitas no seu projeto.
- - [x] Você começa uma nova funcionalidade no seu projeto, sem estragar o q já foi feito.
- - [x] Você adiciona as novas funcionalidades ao seu projeto em produção.
- - [x] Você quer deletar a branch da nova funcionalidade, depois de aplicar em seu projeto. 
- - [x] Colocar o projeto na nuvem.
-   
- - `git init` // inicia a linha do tempo.
- - `git add` // adiciona ou atualiza mudanças p irem para a linha do tempo
- - `git commit` // adiciona um ponto na linha do tempo.
- - `git log` // visualiza os pontos na linha do tempo / commit.
- - `git status` // informa o estado das alterações do projeto.
- - `git show` // apresenta determinado ponto na historia.
- - `git push` // para enviar suas alterações ao seu repositório remoto.
- - `BRANCH` // Branches ("ramos") são utilizados para desenvolver funcionalidades isoladas umas das outras. O branch master é o branch "padrão" quando você cria um repositório. Use outros branches para desenvolver e mescle-os (merge) ao branch master após a conclusão. 
- - `git checkout` // crie um novo branch chamado "funcionalidade_x" e selecione-o usando
-git checkout -b funcionalidade_x. Retorne para o master usando git checkout master, e remova o branch da seguinte forma git branch -d funcionalidade_x. Um branch não está disponível a outros a menos que você envie o branch para seu repositório remoto
-git push origin < funcionalidade_x >
+$ git status
+> Exibe informações sobre os estados dos arquivos.
+
+$ git add 
+> Adiciona os arquivos e/ou alterações realizadas nos arquivos.
+
+$ git commit -m
+> Envia o commit. 
+> A flag -m indica que sera passado uma msg.
+
+$ git commit -am
+> Possibilita que vc adcione e commit ao msm tempo.
+
+$ git log
+> Exibe as informaçõe sobre todas os commits enviados, como autor, hora, hash do commit e etc...
+
+$ git log --graph
+> Exibe um grafico dos de alteraçõe.
+
+$ git shortlog
+> Mostra o nome dos autores seus respectivos commits.
+
+$ git shortlog -sn
+> Mostra quantos commits cada autor realizou.
+
+$ git show *HASH*
+> Exibe as informações sobre um determinado commit, exibindo o que foi adcionado.
+
+$ git diff
+> Exibe as alterações realizadas nos arquivos antes de serem versionadas.
+
+$ git checkout "Nome do arquivo"
+> Desfaz as alterações antes que o arquivo seja adicionado.
+
+$ git reset HEAD "Name do arquivo"
+> Esse comando serve para remover um arquivo da fila de staged... ou seja, ele volta para o estado em que o arquivo ainda nao foi adcionado.
+
+$ git reset --soft
+> Mata o commit e volta para a fila de staged... ou seja, o commit vai ser apagado, mas o arquivo ira continiar pronto para ser commitado com as alteraçõe feitas. Obs: Nessa parte o aquivo ja foi adicionado mas não commitado.
+
+$ git reset --mixed
+> Deleta o commit r volta para a estado antes do staged... entao nesse caso o arquico ainda materá as alterações, mas sera preciso realizar os comando git add e git commit -m.
+
+$ git reset --hard
+> Este é o reset mais hardcore, pois ele exclui o commit e as alterações realizadas no arquivo por esse commit.
+
+>>OBS: Para cada um dos commando reset é necessário informar o HASH da versão que vc deseja voltar, lembrando que as alteraçõe e exclusões serão realizadas em todos os commits feitos depois do commit informado.$
+
+$ git checkout -b "Name"
+> Cria uma branch e muda para ela automaticamente.
+
+$ git branch
+> Exibe todos os branch que vc possue naquele projeto, e coloca um * na branch que vc esta no momento.
+
+$ git checkout "Name"
+> Muda de branch
+
+$ git branch -D "Name"
+> Deleta uma branch
+
+$ git merge "Name_branch"
+> Junta Duas Branchs
+
+$ git push
+> O comando git push é usado para enviar conteúdo do repositório local(sua máquina) para um repositório remoto. "Push" é como os commits do repositório local são enviados a um repositório remoto. É a contraparte para git fetch: buscar (fetch) baixa commits para ramificações locais, e push envia commits para ramificações remotas.
  
