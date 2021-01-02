@@ -90,6 +90,7 @@ $ git push
 <hr>
 
 <div id="1"></div>
+
 ### 🚀 Como inicializar um repositório?
 
 Entre na pasta do projeto no terminal e digite:
