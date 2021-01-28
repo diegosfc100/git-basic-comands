@@ -8,7 +8,7 @@
 > *[🚀 > Criando um projeto.](#1)*\
 > *[🚀 > Conferindo o status do repositório.](#2)*\
 > *[🚀 > Fazendo modificações.](#3)*\
-> *[🚀 > Adicionando modificações.](#4)*
+> *[🚀 > Adicionando modificações ao stage.](#4)*
 
 >
 </details>
@@ -131,6 +131,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 <hr>
 
 <div id="4"></div>
+
 ## 🚀 Adicionando modificações ao stage
 
 #### Adicionando modificações
