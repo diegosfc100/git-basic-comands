@@ -5,8 +5,8 @@
 </summary>
 
 >
-> *[🚀 #1 Criando um projeto.](#1)*\
-> *[🚀 #2 Conferindo o status do repositório.](#2)*
+> *[🚀 > Criando um projeto.](#1)*\
+> *[🚀 > Conferindo o status do repositório.](#2)*
 
 >
 </details>
@@ -22,7 +22,7 @@ mkdir hello
 cd hello
 touch hello.html
 ```
-### 01. Crie uma página de "Hello, World"
+#### 01. Crie uma página de "Hello, World"
 
  > Crie um diretório vazio chamado "pasta". Então, crie um arquivo hello.html dentro dele com o conteúdo indicado abaixo.
 
@@ -33,7 +33,7 @@ touch hello.html
 ```
 
 
-### 02. Crie um repositório
+#### 02. Crie um repositório
 
 >Então você tem um diretório que tem um arquivo. Execute o comando **git init** para criar um repositório do git a partir desse diretório.
 
@@ -47,7 +47,7 @@ $ git init
 Initialized empty Git repository in /Users/alex/Documents/Presentations/githowto/auto/hello/.git/
 ```
 
-### 03. Adicione a página ao repositório
+#### 03. Adicione a página ao repositório
 
 > Agora vamos adicionar a página “Hello, World” ao repositório com **git add**
 
@@ -72,7 +72,7 @@ $ git commit -m "First Commit"
 ## 🚀 Conferindo o Status do Repositório
 
 
-### 01. Confira o status do repositório
+#### 01. Confira o status do repositório
 
 > Use o comando **git status** para checar o estado atual do repositório. Execute:
 ```sh
