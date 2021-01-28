@@ -7,7 +7,8 @@
 >
 > *[🚀 > Criando um projeto.](#1)*\
 > *[🚀 > Conferindo o status do repositório.](#2)*\
-> *[🚀 > Fazendo modificações.](#3)*
+> *[🚀 > Fazendo modificações.](#3)*\
+> *[🚀 > Adicionando modificações.](#4)*
 
 >
 </details>
@@ -23,7 +24,7 @@ mkdir hello
 cd hello
 touch hello.html
 ```
-#### 01. Crie uma página de "Hello, World"
+#### Crie uma página de "Hello, World"
 
  > Crie um diretório vazio chamado "pasta". Então, crie um arquivo hello.html dentro dele com o conteúdo indicado abaixo.
 
@@ -34,7 +35,7 @@ touch hello.html
 ```
 
 
-#### 02. Crie um repositório
+#### Crie um repositório
 
 >Então você tem um diretório que tem um arquivo. Execute o comando **git init** para criar um repositório do git a partir desse diretório.
 
@@ -48,7 +49,7 @@ $ git init
 Initialized empty Git repository in /Users/alex/Documents/Presentations/githowto/auto/hello/.git/
 ```
 
-#### 03. Adicione a página ao repositório
+#### Adicione a página ao repositório
 
 > Agora vamos adicionar a página “Hello, World” ao repositório com **git add**
 
@@ -72,7 +73,7 @@ $ git commit -m "First Commit"
 ## 🚀 Conferindo o Status do Repositório
 
 
-#### 01. Confira o status do repositório
+#### Confira o status do repositório
 
 > Use o comando **git status** para checar o estado atual do repositório. Execute:
 ```sh
@@ -94,9 +95,8 @@ nothing to commit (working directory clean)
 <div id="3"></div>
 
 ## 🚀 Fazendo modificações
-*Aprenda a monitorar o estado do dirétorio de trabalho*
 
-#### 01. Modificar a página de “Hello, World”
+#### Modificar a página de “Hello, World”
 
 > Vamos adicionar algumas tags HTML para a nossa saudação. Modifique os conteúdos do arquivo para:
 
@@ -104,11 +104,10 @@ nothing to commit (working directory clean)
 <h1>Hello, World!</h1>
 ```
 
-02
-Conferindo o status
+#### Conferindo o status
 
-Confira o status do diretório de trabalho.
-Execute:
+> Confira o status do diretório de trabalho com **git status**. Execute:
+
 ```
 git status
 ```
@@ -126,8 +125,34 @@ $ git status
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-O primeiro aspecto importante aqui é que o git sabe que o arquivo hello.html foi modificado, mas essas modificações ainda não sofreram commit para o repositório.
+>O primeiro aspecto importante aqui é que o git sabe que o arquivo hello.html foi modificado, mas essas modificações ainda não sofreram commit para o repositório.
 
-Outro aspecto é que a mensagem de status oferece dicas sobre o que fazer em seguida. Se você quiser adicionar essas modificações para o repositório, use git add. Para desfazer as modificações use git checkout.
+>Outro aspecto é que a mensagem de status oferece dicas sobre o que fazer em seguida. Se você quiser adicionar essas modificações para o repositório, use **git add**. Para desfazer as modificações use **git checkout**.
+<hr>
 
+<div id="4"></div>
+## 🚀 Adicionando modificações ao stage
 
+#### Adicionando modificações
+
+>Agora mande o git adicionar as modificações ao stage com **git add**. Confira o status com **git status**. Execute:
+```sh
+git add hello.html
+git status
+```
+
+você verá …
+```
+$ git add hello.html
+$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#   modified:   hello.html
+#
+```
+
+> Modificações no hello.html foram adicionadas ao stage. Isso quer dizer que o git sabe da modificação, mas não é permanente no repositório. O próximo commit incluirá as modificações que estão no stage.
+
+> Se você decidir não fazer commit da modificação, o comando **git status** vai te lembrar que você pode usar o comando **git reset** para remover essas mudanças do stage.
