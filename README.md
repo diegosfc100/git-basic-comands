@@ -8,7 +8,8 @@
 > *[🚀 > Criando um projeto.](#1)*\
 > *[🚀 > Conferindo o status do repositório.](#2)*\
 > *[🚀 > Fazendo modificações.](#3)*\
-> *[🚀 > Adicionando modificações ao stage.](#4)*
+> *[🚀 > Adicionando modificações ao stage.](#4)*\
+> *[🚀 > Colocando em stage e fazendo commits.](#5)*
 
 >
 </details>
@@ -157,3 +158,27 @@ $ git status
 > Modificações no hello.html foram adicionadas ao stage. Isso quer dizer que o git sabe da modificação, mas não é permanente no repositório. O próximo commit incluirá as modificações que estão no stage.
 
 > Se você decidir não fazer commit da modificação, o comando **git status** vai te lembrar que você pode usar o comando **git reset** para remover essas mudanças do stage.
+<hr>
+
+
+<div id="5"></div>
+
+## 🚀 Colocando em stage e fazendo commits
+
+> Adicionar algo ao stage no git permite que você continue fazendo modificações no seu diretório de trabalho e, quando decidir que quer interagir com o controle de versão, permite que guarde as mudanças em pequenos commits.
+
+> Pense que você editou três arquivos (a.html, b.html e c.html). Depois disso você tem que fazer commit de todas as modificações para que as mudanças em a.html e b.html sejam um único commit, enquanto as mudanças em c.html, que não são lógicamente relacionadas com as duas outras mudanças nos outros dois arquivos, sejam enviadas em um commit diferente.
+
+Em teoria, você pode fazer o seguinte:
+```sh
+git add a.html
+git add b.html
+git commit -m "Changes for a and b"
+
+git add c.html
+git commit -m "Unrelated change to c"
+```
+
+> Separando a adição ao stage e o commit, você pode customizar o que vai em cada commit.
+
+
