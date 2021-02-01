@@ -180,5 +180,72 @@ git commit -m "Unrelated change to c"
 ```
 
 > Separando a adição ao stage e o commit, você pode customizar o que vai em cada commit.
+<hr>
 
 
+<div id="6"></div>
+
+
+## 🚀 Fazendo commit das modificações
+
+#### Fazendo commit das modificações
+
+> Quando você usou o comando **git commit** anteriormente para fazer commit da primeira versão do hello.html para o repositório, você incluiu a flag **-m** que permite um comentário na linha de comando. O comando de commit permite edição interativa de comentários para o commit. Agora, vamos ver como isso funciona.
+
+> Se você omitir a flag -m da linha de comando, o git vai abrir o editor da sua escolha, a partir dessa lista (em ordem de prioridade):
+
+ Variável de ambiente GIT_EDITOR ;</>
+ Definição de configuração core.editor ;</br>
+ Variável de ambiente VISUAL ;</br>
+ Variável de ambiente EDITOR .</br>
+
+Execute:
+```sh
+git commit
+```
+
+Resultado:
+
+```sh
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#   modified:   hello.html
+#
+```
+
+> Na primeira linha, escreva o comentário: “Added h1 tag”. Salve o arquivo e saia do editor (para fazer isso no editor padrão, pressione ESC e então escreva :wq e aperte Enter). 
+
+Resultado:
+```sh
+git commit
+Waiting for Emacs...
+[master 569aa96] Added h1 tag
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+```
+
+> "Waiting for Emacs…" é obtido pelo programa emacsclient estar enviando o arquivo para um programa emacs em execução e esperando para ele ser fechado. O resto das informações é a mensagem padrão de commits.
+
+
+## Conferindo o status
+
+> No final, vamos conferir o status.
+
+Execute:
+
+```
+git status
+```
+
+Resultado:
+
+```
+$ git status
+# On branch master
+nothing to commit (working directory clean)
+```
+
+> O diretório de trabalho está limpo, você pode continuar trabalhando.
