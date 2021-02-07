@@ -9,8 +9,8 @@
 > *[🚀 > Conferindo o status do repositório.](#2)*\
 > *[🚀 > Fazendo modificações.](#3)*\
 > *[🚀 > Adicionando modificações ao stage.](#4)*\
-> *[🚀 > Colocando em stage e fazendo commits.](#5)*
-> *[🚀 > Fazendo commit das modificações.](#6)*
+> *[🚀 > Colocando em stage e fazendo commits.](#5)*\
+> *[🚀 > Fazendo commit das modificações.](#6)*\
 > *[🚀 > Modificações, não arquivos.](#7)*
 
 >
