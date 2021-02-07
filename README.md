@@ -10,6 +10,8 @@
 > *[🚀 > Fazendo modificações.](#3)*\
 > *[🚀 > Adicionando modificações ao stage.](#4)*\
 > *[🚀 > Colocando em stage e fazendo commits.](#5)*
+> *[🚀 > Fazendo commit das modificações.](#6)*
+> *[🚀 > Modificações, não arquivos.](#7)*
 
 >
 </details>
@@ -101,7 +103,7 @@ nothing to commit (working directory clean)
 
 > Vamos adicionar algumas tags HTML para a nossa saudação. Modifique os conteúdos do arquivo para:
 
-```sh
+```html
 <h1>Hello, World!</h1>
 ```
 
@@ -188,13 +190,11 @@ git commit -m "Unrelated change to c"
 
 ## 🚀 Fazendo commit das modificações
 
-#### Fazendo commit das modificações
-
 > Quando você usou o comando **git commit** anteriormente para fazer commit da primeira versão do hello.html para o repositório, você incluiu a flag **-m** que permite um comentário na linha de comando. O comando de commit permite edição interativa de comentários para o commit. Agora, vamos ver como isso funciona.
 
 > Se você omitir a flag -m da linha de comando, o git vai abrir o editor da sua escolha, a partir dessa lista (em ordem de prioridade):
 
- Variável de ambiente GIT_EDITOR ;</>
+ Variável de ambiente GIT_EDITOR ;</br>
  Definição de configuração core.editor ;</br>
  Variável de ambiente VISUAL ;</br>
  Variável de ambiente EDITOR .</br>
@@ -230,7 +230,7 @@ Waiting for Emacs...
 > "Waiting for Emacs…" é obtido pelo programa emacsclient estar enviando o arquivo para um programa emacs em execução e esperando para ele ser fechado. O resto das informações é a mensagem padrão de commits.
 
 
-## Conferindo o status
+#### Conferindo o status
 
 > No final, vamos conferir o status.
 
@@ -249,3 +249,131 @@ nothing to commit (working directory clean)
 ```
 
 > O diretório de trabalho está limpo, você pode continuar trabalhando.
+<hr>
+
+<div id="7"></div>
+
+## 🚀 Modificações, não arquivos
+
+> Entender que o git trabalha com as modificações, não com os arquivos. A maioria dos sistemas de controle de versão trabalham com arquivos. Você adiciona o arquivo no controle de código e o sistema acompanha as mudanças a partir daquele momento. O Git se concentra nas mudanças de um arquivo, não no arquivo em si. Um comando git add file não fala para o git adicionar o arquivo no repositório, mas para perceber o atual estado do arquivo para que ele seja parte de um commit depois.
+
+
+#### Primeira mudança: Adicionando tags padrão de páginas
+
+> Mude a página “Hello, World” de maneira que ela passe a ter as tags padrão < html > e < body >.
+
+```html
+<html>
+  <body>
+    <h1>Hello, World!</h1>
+  </body>
+</html>
+```
+
+#### Adicione essa modificação
+
+> Agora adicione essa modificação para o stage do git.
+
+```sh
+git add hello.html
+```
+
+#### Segunda mudança: Adicione os headers do HTML
+
+> Agora adicione os headers (< head > section) na página “Hello, World”.
+
+```html
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>Hello, World!</h1>
+  </body>
+</html>
+```
+
+#### Confira o status atual
+
+```sh
+git status
+```
+Você verá …
+
+```sh
+$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#   modified:   hello.html
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#   modified:   hello.html
+#
+```
+> Note que o arquivo hello.html está listado duas vezes no status. A primeira mudança (a adição das tags padrão) está no stage e pronta para um commit. A segunda mudança (adição dos headers) não está no stage. Se você fizesse um commit agora, os headers não teriam sido salvos no repositório.
+
+#### Commit
+
+> Faça um commit das mudanças que estão no stage (as tags padrão) e então confira novamente o status.
+
+```sh
+git commit -m "Added standard HTML page tags"
+git status
+```
+
+Você verá …
+
+```sh
+
+$ git commit -m "Added standard HTML page tags"
+[master 8c32287] Added standard HTML page tags
+ 1 files changed, 3 insertions(+), 1 deletions(-)
+$ git status
+# On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#   modified:   hello.html
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+> O comando status diz que o arquivo hello.html tem modificações não gravadas, mas não está mais em buffer.
+
+#### Adicionando a segunda modificação
+
+> Adicione a segunda modificação ao stage, depois execute o comando git status.
+
+```sh
+git add .
+git status 
+```
+
+> Nota: O diretório atual (‘.’) vai ser nosso arquivo a adicionar. Essa é a maneira mais conveniente de adicionar todas as mudanças dos arquivos do diretório atual e suas pastas. Mas como ele adiciona tudo, é uma boa ideia conferir o status antes de fazer um add ., para ter certeza que você não adicione nenhum arquivo que não deveria ser adicionado.
+
+> Eu queria que você visse o truque do “add .”, mas nós vamos continuar adicionando os arquivos explicitamente no futuro, por via das dúvidas.
+
+Você verá …
+
+```sh
+$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#   modified:   hello.html
+#
+```
+
+> A segunda modificação está no stage e pronta para um commit.
+
+#### Faça um commit da segunda mudança
+
+```sh
+git commit -m "Added HTML header"
+```
