@@ -11,7 +11,8 @@
 > *[🚀 > Adicionando modificações ao stage.](#4)*\
 > *[🚀 > Colocando em stage e fazendo commits.](#5)*\
 > *[🚀 > Fazendo commit das modificações.](#6)*\
-> *[🚀 > Modificações, não arquivos.](#7)*
+> *[🚀 > Modificações, não arquivos.](#7)*\
+> *[🚀 > Histórico.](#8)*
 
 >
 </details>
@@ -377,3 +378,122 @@ $ git status
 ```sh
 git commit -m "Added HTML header"
 ```
+<hr>
+
+<div id="8"></div>
+
+## 🚀 Histórico
+
+> Conseguir uma lista das modificações feitas é uma função do comando **git log**.
+
+```sh
+git log
+```
+
+Você verá...
+
+```sh
+$ git log
+commit fa3c1411aa09441695a9e645d4371e8d749da1dc
+Author: Alexander Shvets <alex@githowto.com>
+Date:   Wed Mar 9 10:27:54 2011 -0500
+
+    Added HTML header
+
+commit 8c3228730ed03116815a5cc682e8105e7d981928
+Author: Alexander Shvets <alex@githowto.com>
+Date:   Wed Mar 9 10:27:54 2011 -0500
+
+    Added standard HTML page tags
+
+commit 43628f779cb333dd30d78186499f93638107f70b
+Author: Alexander Shvets <alex@githowto.com>
+Date:   Wed Mar 9 10:27:54 2011 -0500
+
+    Added h1 tag
+
+commit 911e8c91caeab8d30ad16d56746cbd6eef72dc4c
+Author: Alexander Shvets <alex@githowto.com>
+Date:   Wed Mar 9 10:27:54 2011 -0500
+
+    First Commit
+```
+
+> Aqui está uma lista de todos os quatro commits do repositório, que nós fizemos até agora.
+
+
+#### Histórico em uma linha
+
+> Você controla completamente o que o log mostra. Eu gosto do formato de linha única.
+
+```sh
+git log --pretty=oneline
+```
+
+Você verá …
+
+```sh
+$ git log --pretty=oneline
+fa3c1411aa09441695a9e645d4371e8d749da1dc Added HTML header
+8c3228730ed03116815a5cc682e8105e7d981928 Added standard HTML page tags
+43628f779cb333dd30d78186499f93638107f70b Added h1 tag
+911e8c91caeab8d30ad16d56746cbd6eef72dc4c First Commit
+```
+
+#### Controlando a exibição de entradas
+
+> Existem muitas opções para escolher quais entradas aparecem no log. Brinque um pouco com os parâmetros a seguir:
+
+```sh
+git log --pretty=oneline --max-count=2
+git log --pretty=oneline --since='5 minutes ago'
+git log --pretty=oneline --until='5 minutes ago'
+git log --pretty=oneline --author=<your name>
+git log --pretty=oneline --all
+```
+
+> Detalhes são fornecidos nas instruções do git-log.
+
+#### Ficando chique
+
+> Isso é como eu faço para rever as modificações feitas na última semana. Eu adiciono --author=alex se eu quero ver apenas as modificações que eu fiz.
+
+```sh
+git log --all --pretty=format:"%h %cd %s (%an)" --since='7 days ago'
+```
+
+#### O melhor formato do log
+
+> Com o tempo, eu descobri que o seguinte formato é o mais adequado.
+
+```sh
+git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
+```
+
+Ele fica assim:
+
+```sh
+$ git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
+* fa3c141 2011-03-09 | Added HTML header (HEAD, master) [Alexander Shvets]
+* 8c32287 2011-03-09 | Added standard HTML page tags [Alexander Shvets]
+* 43628f7 2011-03-09 | Added h1 tag [Alexander Shvets]
+* 911e8c9 2011-03-09 | First Commit [Alexander Shvets]
+```
+
+> Vamos olhar os detalhes:
+
+  - --pretty="..." define o formato da saída
+  - %h é o hash abreviado do commit
+  -  %d mostra decorações do commit (ex.: head de branches ou tags)
+  -  %ad é a data do commit
+  -  %s é o comentário
+  -  %an é o nome do autor =
+  -  --graph fala para o git mostrar a árvore de commits no formato de um gráfico de ASCII
+  -  --date=short mantém o formato de data pequeno e simples
+
+> Então, toda vez que você quiser ver um log, você terá que digitar muito. Felizmente, nós aprenderemos sobre aliases na próxima lição.
+
+#### Outras ferramentas
+
+> Ambos gitx (para Mac) e gitk (para qualquer plataforma) ajudam a explorar o histórico.
+
