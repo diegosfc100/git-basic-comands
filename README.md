@@ -1,4 +1,8 @@
-# O básico do Git para sobreviver.
+<h1 align="center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/1280px-Git-logo.svg.png" alt="Logo-Netflix" width="30%"/><br>
+    O básico do GIT para sobreviver.
+</h1>
+
 <details>
 <summary>
   <strong>🔍 Sumário</strong>
